@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true, uniqueness: true
   validates :address, presence: true, uniqueness: true
-
-  after_validation :geocode
+  validates_presence_of :lat
+  validates_presence_of :lng
+  before_validation :geocode
 
   ALL_USERS = :id, :email, :address, :lat, :lng, :category, :price_paid
 
