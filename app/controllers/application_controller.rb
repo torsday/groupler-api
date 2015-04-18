@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   after_filter :cors_set_access_control_headers
 
   def cors_set_access_control_headers
-    p "WTF MATE?"
     headers['Access-Control-Allow-Origin'] = '*'
     headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
     headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
