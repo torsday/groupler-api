@@ -7,7 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @email    = params[:email]
-    @address  = params[:address]
+    @user = User.create(user_params)
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:id, :address, :lat, :lng, :category, :price_paid)
   end
 end
