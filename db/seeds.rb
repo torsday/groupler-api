@@ -20,3 +20,13 @@ end
     :name => Faker::Company.name
   )
 end
+
+Company.all.each do |comp|
+  Project.all.each do |proj|
+    Bid.create(
+      company: comp,
+      project: proj,
+      dollars: 15_000 + rand(14_000)
+    )
+  end
+end
