@@ -4,7 +4,7 @@ User.create(email: "user3@example.com", address: "3 First St. 94598",  lat: 37.9
 User.create(email: "user4@example.com", address: "4 First St. 94598",  lat: 37.918793, lng: -122.007946, category: 4)
 
 
-6.times do
+23.times do
   Project.create(
     sun_number: 62 + rand(37),
     mo_elec_bill: 30 + rand(150),
