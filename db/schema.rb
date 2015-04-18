@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418184427) do
+ActiveRecord::Schema.define(version: 20150418185444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "cube"
   enable_extension "earthdistance"
+
+  create_table "bids", force: :cascade do |t|
+    t.integer  "dollars"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
