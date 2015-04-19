@@ -8,8 +8,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    scope = User.all_users
-    render json: scope  
+    render json: @user
   end
 
   private
